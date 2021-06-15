@@ -31,28 +31,28 @@ var soundOfInstrument = new Map([
  */
 function Musician(sound) {
 
+	/*
+	 * Création de l'objet JSON et du payload correspondant
+	 */
+	var instrument = {
+		uuid: uuidv4(),
+		sound: sound
+	};
+	var payload = JSON.stringify(instrument);
+
+	var message = new Buffer(payload);
+
 	Musician.prototype.update = function() {
-
 		/*
-		 * Création de l'objet JSON et du payload correspondant
+		 * Envoi du message
 		 */
-		var instrument = {
-			uuid: uuidv4(),
-			sound: sound
-		};
-		var payload = JSON.stringify(instrument);
-
-		/*
-		 * Création du message à envoyer et envoi de celui-ci
-		 */
-		message = new Buffer(payload);
 		socket.send(message, 0, message.length, protocol.PROTOCOL_PORT, protocol.PROTOCOL_MULTICAST_ADDRESS, function(err, bytes) {
 			console.log("Sending payload: " + payload + " via port " + socket.address().port);
 		});
 	}
 
 	/*
-	 * Envoi d'un nouveau payload toutes les 5 secondes
+	 * Envoi d'un nouveau payload toutes les secondes
 	 */
 	setInterval(this.update.bind(this), 1000);
 
