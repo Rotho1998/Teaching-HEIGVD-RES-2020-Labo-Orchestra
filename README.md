@@ -160,15 +160,15 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | ---  |
 |Question | With Node.js, how can we listen for UDP datagrams in a multicast group? |
-| | *Enter your response here...*  |
+| | Avec l'utilisation de la méthode `bind()`. |
 |Question | How can we use the `Map` built-in object introduced in ECMAScript 6 to implement a **dictionary**?  |
-| | *Enter your response here...* |
+| | En associant d'un "bruit" à son instrument. Le "bruit" dans cette application "auditor" est la clé de la Map. |
 |Question | How can we use the `Moment.js` npm module to help us with **date manipulations** and formatting?  |
-| | *Enter your response here...* |
+| | Il nous permet de récupérer les informations de l'heure et la date du moment lorsque le datagramme UDP est envoyé. Il va également nous permettre dans notre cas calculer les 5 secondes pour détermier si un musicien est encore actif. |
 |Question | When and how do we **get rid of inactive players**?  |
-| | *Enter your response here...* |
+| | Lors de l'envoi au client, un parcours de tous les musiciens est effectué pour les envoyer. Un test est effectué à ce moment là et supprime les musiciens inactifs. |
 |Question | How do I implement a **simple TCP server** in Node.js?  |
-| | *Enter your response here...* |
+| | Tout comme pour le UDP, on utilise la méthode `on()` pour recevoir les connexions TCP. Pour écouter, la méthode `listen()` est utilisée. Ces méthodes proviennent du package `net` de Node.js. |
 
 
 ## Task 5: package the "auditor" app in a Docker image
