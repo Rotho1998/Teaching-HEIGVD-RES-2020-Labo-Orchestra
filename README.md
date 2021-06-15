@@ -120,21 +120,21 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | --- |
 |Question | In a JavaScript program, if we have an object, how can we **serialize it in JSON**? |
-| | *Enter your response here...*  |
+| | A l'aide de la méthode `JSON.stringify()`. |
 |Question | What is **npm**?  |
-| | *Enter your response here...*  |
+| | npm est le gestionnaire de paquets de Node.js |
 |Question | What is the `npm install` command and what is the purpose of the `--save` flag?  |
-| | *Enter your response here...*  |
+| | Cette commande installe les dépendances et le package dans le répertoire node_modules d'un projet local. Avec l'option `--save`, cela va aller sauvegarder tous les paquets installés dans les dépendances du fichier `package.json`. |
 |Question | How can we use the `https://www.npmjs.com/` web site?  |
-| | *Enter your response here...*  |
+| | C'est un site permettant de trouver des paquets et leur documentation respective que d'autres utilisateurs ont publié, dans la même idée que Docker hub que nous avons vu plus tôt dans ce cours. |
 |Question | In JavaScript, how can we **generate a UUID** compliant with RFC4122? |
-| | *Enter your response here...*  |
+| | En installant le paquet `uuid` à l'aide de la commande `npm install uuid`. |
 |Question | In Node.js, how can we execute a function on a **periodic** basis? |
-| | *Enter your response here...*  |
+| | Nous l'avons déjà vu dans le labo précédent, la fonction `setInterval()` permet d'exécuter une fonction périodiquement. |
 |Question | In Node.js, how can we **emit UDP datagrams**? |
-| | *Enter your response here...*  |
+| | Le paquet `dgram` permet d'utiliser des fonctions pour envoyer des datagrammes UDP. Il faut d'abord créer un socket pour ensuite le configurer et envoyer les datagrammes. |
 |Question | In Node.js, how can we **access the command line arguments**? |
-| | *Enter your response here...*  |
+| | A l'aide de la propriété `process.argv` qui retourne un tableau contenant les arguments passés en ligne de commande. |
 
 
 ## Task 3: package the "musician" app in a Docker image
