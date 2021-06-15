@@ -142,17 +142,17 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | --- |
 |Question | How do we **define and build our own Docker image**?|
-| | *Enter your response here...*  |
+| | Avec le fichier `Dockerfile` présent à la racine de l'image du musicien. Nous configurons ce fichier de manière à ce qu'il récupère une image de node existante (la dernière). Nous pouvons ensuite créer l'image avec la commande `docker build -t res/musician .` |
 |Question | How can we use the `ENTRYPOINT` statement in our Dockerfile?  |
-| | *Enter your response here...*  |
+| | En lui fournissant la commande à exécuter (node) et le fichier à utiliser (musician.js): `ENTRYPOINT ["node", "/opt/app/musician.js"]` |
 |Question | After building our Docker image, how do we use it to **run containers**?  |
-| | *Enter your response here...*  |
+| | Simplement avec la commande `docker run`. Dans notre cas, on va préciser le nom de l'image et l'instrument à utiliser, la commande ressemble donc à ceci: `docker run -d res/musician piano|trumpet|flute|violin|drum` |
 |Question | How do we get the list of all **running containers**?  |
-| | *Enter your response here...*  |
+| | Avec la commande `docker ps` |
 |Question | How do we **stop/kill** one running container?  |
-| | *Enter your response here...*  |
+| | Pour le stop: `docker stop NOM_DU_CONTAINER`, pour le kill: `docker kill NOM_DU_CONTAINER` |
 |Question | How can we check that our running containers are effectively sending UDP datagrams?  |
-| | *Enter your response here...*  |
+| | Avec un outil de scannage du traffic UDP, par exemple avec `tcpdump` |
 
 
 ## Task 4: implement an "auditor" Node.js application
