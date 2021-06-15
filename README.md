@@ -104,15 +104,15 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | --- | --- |
 |Question | How can we represent the system in an **architecture diagram**, which gives information both about the Docker containers, the communication protocols and the commands? |
-| | *Insert your diagram here...* |
+| | ![](images/ArchitectureDiagram.png) |
 |Question | Who is going to **send UDP datagrams** and **when**? |
-| | *Enter your response here...* |
+| | Les containers *Musician* envoient des datagrammes UDP toutes les secondes à partir du moment où un container est démarré. |
 |Question | Who is going to **listen for UDP datagrams** and what should happen when a datagram is received? |
-| | *Enter your response here...* |
+| | Le container *Auditor* écoute les datagrammes UDP en conservant une trace des musiciens actifs (ceux qui ont joué dans les 5 dernières secondes). |
 |Question | What **payload** should we put in the UDP datagrams? |
-| | *Enter your response here...* |
+| | Le son émis par un musicien, ainsi qu'un UUID unique auto-assigné. |
 |Question | What **data structures** do we need in the UDP sender and receiver? When will we update these data structures? When will we query these data structures? |
-| | *Enter your response here...* |
+| | Le format JSON est utilisé comme structure de données. Ces données seront mises à jour toutes les secondes par les musiciens actifs. Lors de la connexion via TCP sur l'auditeur, celui-ci va retourner les musiciens actifs dans les 5 dernières secondes. |
 
 
 ## Task 2: implement a "musician" Node.js application
