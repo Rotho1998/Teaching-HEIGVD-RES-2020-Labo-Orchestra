@@ -176,7 +176,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | --- |
 |Question | How do we validate that the whole system works, once we have built our Docker image? |
-| | *Enter your response here...* |
+| | Il faut exécuter la commande `docker run -d -p 2205:2205 res/auditor` une seule fois. On peut ensuite lancer différents container "musiciens" avec la commande `docker run -d res/musician piano|trumpet|flute|violin|drum` afin de créer notre propre environnement. Pour se connecter via TCP sur l' "auditeur" il faut utiliser la commande `telnet 172.17.0.2 2205`. L'adresse IP doit correspondre à l'adresse du container "auditor" (utilisation de la commande `docker inspect` afin de trouver cette adresse IP). On peut ensuite supprimer un ou plusieurs containers "musicien" et attendre minimum 5 secondes avant de relancer la commande `telnet` et d'apercevoir que les musiciens ne sont plus actifs. <br />Une autre possibilité est de simplement exécuter le script de validation `validate.sh`.<br />Afin de tester les cas de lancement de container invalides, on peut exécuter la commande `docker run -d res/musician` avec un instrument non enregistré (`xylophone` par exemple) ou un nombre invalide d'arguments, pour apercevoir que le docker crash instantanément et ne se lance pas. |
 
 
 ## Constraints
